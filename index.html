@@ -304,7 +304,7 @@ function evMeta(){var e=STATE.event;return esc([e.name,e.date,e.place].filter(Bo
 function attendee(){
   var b="",res=false,n=STATE.photos.length;
   if(A.step==="consent"){
-    b='<p class="eyebrow">'+esc(STATE.event.name)+'</p><h1>'+t("find")+'</h1><p class="meta">'+esc([STATE.event.date,STATE.event.place].filter(Boolean).join(" · "))+' · '+n+' '+t("photosN")+'</p>';
+    b='<p class="eyebrow">'+esc(STATE.event.name)+'</p><h1>'+t("find")+'</h1><p class="meta">'+esc([STATE.event.date,STATE.event.place].filter(Boolean).join(" · "))+' · '+n+' '+(n===1?(lang==="es"?"foto publicada":"photo published"):t("photosN"))+'</p>';
     if(!n)b+='<div class="empty">'+t("noPhotos")+'</div>';
     else b+='<div class="perm"><h2>'+t("perm")+'</h2><ul><li>'+t("p1")+'</li><li>'+t("p2")+'</li><li>'+t("p3")+'</li></ul><details class="notice"><summary>'+t("notice")+'</summary><p>'+t("n1")+'</p><p>'+t("n2")+'</p><p>'+t("n3")+'</p><p>'+t("n4")+'</p><p>'+t("n5")+'</p></details><label class="check"><input type="checkbox" id="agree"><span>'+t("agree")+'</span></label><label class="field sig">'+t("sig")+'<input id="sig" autocomplete="name" maxlength="80"></label></div><button class="btn wide" id="allow" data-act="allow" disabled>'+t("allow")+'</button><button class="btn ghost wide" data-act="skip">'+t("notNow")+'</button>';
   }else if(A.step==="camera"){
